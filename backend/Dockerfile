@@ -1,4 +1,4 @@
-FROM node:20.19-alpine
+FROM node:22.12
 
 WORKDIR /app
 
@@ -8,4 +8,6 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
-CMD ["node", "index.js"]
+
+# Use ts-node in ESM mode
+CMD ["node", "--loader", "ts-node/esm", "index.ts"]
