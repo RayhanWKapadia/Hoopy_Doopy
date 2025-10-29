@@ -1,4 +1,6 @@
-FROM node:22.12
+FROM node:18-alpine
+
+ENV NODE_ENV=production
 
 # Set working directory
 WORKDIR /app
@@ -10,10 +12,10 @@ COPY package*.json ./
 RUN npm install
 
 # Copy source code
-COPY . .
+COPY . ./
 
 # Expose the dev server port
 EXPOSE 5173
 
 # Run the dev server
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]

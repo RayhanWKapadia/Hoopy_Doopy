@@ -1,6 +1,6 @@
 // src/pages/Home.jsx
-import PlayerTable from "../components/PlayerTable";
 import NavScrollExample from "../components/NavBar";
+import PlayerTable from "../components/PlayerTable";
 
 
 
