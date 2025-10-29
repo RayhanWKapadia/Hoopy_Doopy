@@ -1,10 +1,13 @@
 // src/pages/Home.jsx
-import React from "react";
 import PlayerTable from "../components/PlayerTable";
+import NavScrollExample from "../components/NavBar";
+
+
 
 const Home = () => {
   return (
     <div>
+      <NavScrollExample />
       <PlayerTable />
     </div>
   );

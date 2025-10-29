@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table';
 
-function playerTable() {
+function PlayerTable() {
   return (
     <Table striped bordered hover>
       <thead>
@@ -34,4 +34,4 @@ function playerTable() {
   );
 }
 
-export default playerTable;
+export default PlayerTable;
