@@ -2,7 +2,7 @@
 
 # Define variables for convenience
 COMPOSE_FILE := docker-compose.yml
-PROJECT_NAME := my-app
+PROJECT_NAME := hoopy_doopy
 
 # Target to build Docker images defined in docker-compose.yml
 build:
