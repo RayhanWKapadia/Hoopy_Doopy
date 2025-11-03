@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Knex } from "knex";
 import fs from "fs";
 import path from "path";
@@ -9,10 +10,30 @@ const config: { [key: string]: Knex.Config } = {
     migrations: {
       directory: "./migrations",
       extension: "ts",
+=======
+import dotenv from 'dotenv';
+import type { Knex } from 'knex';
+
+dotenv.config();
+
+const config: { [key: string]: Knex.Config } = {
+  development: {
+    client: 'pg',
+    connection: {
+      host: process.env.POSTGRES_HOST,
+      port: Number(process.env.POSTGRES_PORT),
+      user: process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD,
+      database: process.env.POSTGRES_DB,
+    },
+    migrations: {
+      directory: './migrations',
+>>>>>>> 39a0ddd4957ec74e9fe672e8c433c1ce344b576f
     },
   },
 };
 
+<<<<<<< HEAD
 export async function seed(knex: Knex): Promise<void> {
   await knex("player_stats").del();
 
@@ -68,4 +89,6 @@ export async function seed(knex: Knex): Promise<void> {
   await knex("player_stats").insert(records);
 }
 
+=======
+>>>>>>> 39a0ddd4957ec74e9fe672e8c433c1ce344b576f
 export default config;
