@@ -13,7 +13,6 @@ services:
       - /app/node_modules
     depends_on:
       - backend
-
   backend:
     build: ./backend
     environment:
@@ -24,18 +23,24 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - postgres
-
-  postgres:
-    image: postgres:15
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: app_db
+      - mongo
+  cron-jobs:
+    build: ./cron-jobs
     ports:
-      - "5432:5432"
+      - "9000:9000"
+    environment:
+      - PORT=9000
+      - HOST=0.0.0.0
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - ./cron-jobs:/app
+      - /app/node_modules
+  mongo:
+    image: mongo:latest
+    container_name: mongo_database
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
 
 volumes:
-  postgres-data:
+  mongo-data:
