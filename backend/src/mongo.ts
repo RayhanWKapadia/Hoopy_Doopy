@@ -9,7 +9,7 @@ export const connectToDatabase = async (): Promise<Db> => {
   const client = new MongoClient(uri);
 
   await client.connect();
-  db = client.db("my_database"); // choose your DB name
+  db = client.db("mongoDB");
 
   console.log("✅ Connected to MongoDB");
   return db;

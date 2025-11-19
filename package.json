@@ -2,6 +2,7 @@
   "dependencies": {
     "knex": "^3.1.0",
     "pg": "^8.16.3",
+    "prettier": "^3.6.2",
     "tailwind": "^2.3.1",
     "vue": "^3.5.22",
     "vue2-transitions": "^0.3.0"
