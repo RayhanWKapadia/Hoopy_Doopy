@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🏀 Hoopy Doopy  
 *A data-driven AI platform for NBA player insights and comparisons.*
 
@@ -33,15 +32,3 @@ The goal is to help fans, analysts, and developers explore performance data in s
 ```bash
 git clone https://github.com/RayhanWKapadia/Hoopy_Doopy.git
 cd Hoopy_Doopy
-=======
-# Hoopy_Doopy
-
-Starting the app:
-    - docker-compose build
-    - cd into backend then run (npx knex migrate:latest)
-    - run this first: npx knex migrate:rollback --all
-    - backend % npx knex migrate:up
-    - or migrate down depending on what you want
-    
-    
->>>>>>> 39a0ddd4957ec74e9fe672e8c433c1ce344b576f

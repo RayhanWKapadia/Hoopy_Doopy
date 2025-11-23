@@ -1,27 +1,14 @@
-import express from "express";
+import app from "./src/app";
 import { connectToDatabase } from "./src/mongo";
 
-const app = express();
-app.use(express.json());
+const PORT = process.env.PORT || 3000;
 
-let db: any;
-
-app.get("/items", async (req, res) => {
-  const items = await db.collection("items").find().toArray();
-  res.json(items);
-});
-
-const startServer = async () => {
+(async () => {
   try {
-    db = await connectToDatabase();
-
-    app.listen(3000, () => {
-      console.log("🚀 Server running on http://localhost:3000");
-    });
-  } catch (err) {
-    console.error("❌ Failed to start server:", err);
+    await connectToDatabase();
+    app.listen(PORT, () => console.log(`API running http://localhost:${PORT}`));
+  } catch (e) {
+    console.error("Startup failed", e);
+    process.exit(1);
   }
-};
-
-startServer();
-
+})();
